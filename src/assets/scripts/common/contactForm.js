@@ -4,28 +4,6 @@ import * as yup from 'yup';
 import i18next from 'i18next';
 import { successPopup } from './successPopup';
 
-// import * as yup from 'yup';
-
-// const contactSchema = yup.object().shape({
-//   tel: yup.string().required(),
-//   name: yup.string().required(),
-//   confirmation: yup
-//     .bool()
-//     .oneOf([true])
-//     .required(),
-// });
-
-// export const contactForm = selector => {
-//   const formRef = document.querySelector(selector);
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     const { target } = event;
-//     console.log(target.elements);
-//   };
-
-//   formRef.addEventListener('submit', handleSubmit);
-// };
-
 export const contactForm = (formRef, onSuccess) => {
   const btnRef = formRef.querySelector('[data-btn-submit]');
   new FormMonster({
@@ -42,6 +20,7 @@ export const contactForm = (formRef, onSuccess) => {
           inputWrapper: new SexyInput({
             animation: 'none',
             $field: formRef.querySelector('[data-field-name]'),
+            typeInput: 'name',
           }),
           rule: yup
             .string()
@@ -60,7 +39,7 @@ export const contactForm = (formRef, onSuccess) => {
           rule: yup
             .string()
             .required(i18next.t('required'))
-            .min(15, i18next.t('field_too_short', { cnt: 19 - 8 })),
+            .min(12, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
           defaultMessage: i18next.t('phone'),
           valid: false,
@@ -70,6 +49,7 @@ export const contactForm = (formRef, onSuccess) => {
           inputWrapper: new SexyInput({
             animation: 'none',
             $field: formRef.querySelector('[data-field-email]'),
+            typeInput: 'email',
           }),
           rule: yup
             .string()

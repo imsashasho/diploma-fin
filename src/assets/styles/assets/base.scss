@@ -27,6 +27,22 @@ html, body {
   width: 100%;
   min-height: 100%;
 }
+
+#id-home-page, 
+#id-about,
+#id-contacts,
+#id-all-news,
+#id-single-news {
+  margin: 0;
+  line-height: 1.5em;
+  width: auto!important; 
+  overflow-x: hidden!important;
+  font-family: $default-font;
+  font-size: 14px;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
 //  html {
 //   height: -webkit-fill-available;
 //  }
@@ -54,7 +70,6 @@ body textarea {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $mc;
   -webkit-box-shadow: inset 0 0 6px #e2e3e4;
   //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
@@ -64,7 +79,6 @@ body textarea {
 }
 
 ::selection {
-  background-color: $mc;
   color: #fff;
 }
 
@@ -172,7 +186,7 @@ input[type='number']::-webkit-outer-spin-button {
 .custom-scroll::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: $mc;
+  background-color: $bc;
 }
 
 .custom-scroll::-webkit-scrollbar {

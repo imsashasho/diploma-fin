@@ -526,7 +526,6 @@
     display: block;
     position: relative;
     @include mobile {
-      background-color: $bc2;
       left: 50%;
       transform: translateX(-50%);
     }

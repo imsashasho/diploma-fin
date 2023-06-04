@@ -12,6 +12,10 @@
     &:nth-last-child(2) {
       pointer-events: none;
       cursor: none;
+
+      a {
+        padding-right: 0;
+      }
     }
     &:first-child {
       width: fit-content;

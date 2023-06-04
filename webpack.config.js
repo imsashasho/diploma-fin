@@ -5,11 +5,6 @@ const config = {
   mode: 'development',
   entry: {
     index: './src/assets/scripts/index-app.js',
-    homepage: './src/assets/scripts/homepage/index.js',
-    about: './src/assets/scripts/about/index.js',
-    singleProject: './src/assets/scripts/singleProject/index.js',
-    projects: './src/assets/scripts/projects/index.js',
-    news: './src/assets/scripts/news/index.js',
   },
   output: {
     filename: '[name].bundle.js',

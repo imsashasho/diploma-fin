@@ -5,19 +5,23 @@ block meta
 block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
-	script(src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/vendors.bundle.js')
+	script(defer src='./assets/scripts/index.bundle.js')
 
 block content
-	section(class="page404-wrap")
-		div(class="page404")
-			h1(class="page404__title") 404
-				span(class="page404__title-small") упс...
-			p(class="page404__subtitle") Что-то пошло не так, страница не найдена
-			div(class="link-wrap")
-				a(class="button-fill" onclick="window.history.go(-1);")
-					span.button-fill__text Назад
-				a(class="button-fill" href="/")
-					span.button-fill__text На главную
+	section.page404-wrap
+		.page404
+			h1.page404__title 404
+			.page404-intro
+				h2.page404__title-small There is no such page.
+				p.page404__subtitle Start with the main or see what apartments we offer
+				.page404__link-wrap
+					.btn-container.btn-container-border
+						.btn-mask Back
+						a(onclick="window.history.go(-1);").page404-btn.btn Back
+					.btn-container.btn-container-border
+						.btn-mask Homepage
+						a(href="/").page404-btn.btn Homepage
 block header	
 	include ../includes/header.pug
 

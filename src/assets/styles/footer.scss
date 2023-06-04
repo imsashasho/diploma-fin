@@ -5,22 +5,16 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 50;
-  &-leaf {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 200px;
-    opacity: 0.3;
-    z-index: 3;
-    height: 100%;
-    @include mobile {
-      max-width: 250px;
-    }
+
+  &-up {
+    position: relative;
+    z-index: 10000;
   }
 
   &-wrap {
     display: flex;
     background: $mc2;
+    position: relative;
 
     @include tablet {
       flex-direction: column-reverse;
@@ -135,6 +129,10 @@
     margin-top: 0!important;
     height: 60px!important;
     width: 75%!important;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
   }
 
   &-form__input {
@@ -157,6 +155,10 @@
     @include tabletLarge {
       height: 50px;
     }
+
+    @include mobile {
+      padding: 10px 20px;
+    }
   }
   
   &-form__btn-wrap {
@@ -164,6 +166,11 @@
     align-items: center;
     margin-left: 20px;
     width: 40%;
+
+    @include mobile {
+      width: fit-content;
+
+    }
   }
 
   &-form__btn {
@@ -205,6 +212,20 @@
       transform: rotate(90deg);
     }
 
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 70px;
+
+    @include tablet {
+      padding: 0 10px;
+    }
   }
 
 }

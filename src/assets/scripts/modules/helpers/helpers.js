@@ -14,13 +14,13 @@ export const eases = {
 };
 
 export const langDetect = () => {
-  if (window.location.pathname.match(/\/ru\//)) {
-    return 'ru';
+  if (window.location.pathname.match(/\/tr\//)) {
+    return 'tr';
   }
   if (window.location.pathname.match(/\/en\//)) {
     return 'en';
   }
-  return 'uk';
+  return 'tr';
 };
 
 export const addIntersectionOnceWithCallback = (el, cb = () => {}) => {

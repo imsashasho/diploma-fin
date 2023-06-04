@@ -37,6 +37,6 @@ import { contactPopup } from './contactPopup';
     contactPopup.open();
   });
 
-  const newLocal = '[data-contact-popup]';
-  contactForm(document.querySelector(newLocal), () => contactPopup.close());
+  // const newLocal = '[data-contact-popup]';
+  // contactForm(document.querySelector(newLocal), () => contactPopup.close());
 }

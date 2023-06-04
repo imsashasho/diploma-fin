@@ -13,19 +13,7 @@ const footer = document.querySelector('footer');
 const initFooter = () => {
   const footerUpRef = document.querySelector('.footer-up');
 
-  function scrollToTop(e) {
-    // Scroll to top logic
-    e.preventDefault();
-    window.scrollTo({
-      behavior: 'smooth',
-      top: 0,
-    });
-  }
-
-  contactFormFooter(document.querySelector('#call-form'));
-
   // External footer link scroll animation
-
   gsap.from('.footer-up', {
     scrollTrigger: {
       trigger: '.footer',
@@ -36,6 +24,17 @@ const initFooter = () => {
     y: 150,
     ease: 'sine',
   });
+
+  function scrollToTop(e) {
+    // Scroll to top logic
+    e.preventDefault();
+    window.scrollTo({
+      behavior: 'smooth',
+      top: 0,
+    });
+  }
+
+  contactFormFooter(document.querySelector('#call-form'));
 
   footerUpRef.addEventListener('click', scrollToTop);
 };

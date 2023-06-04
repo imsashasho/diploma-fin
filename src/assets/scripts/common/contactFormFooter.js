@@ -12,7 +12,6 @@ export const contactFormFooter = (formRef, onSuccess) => {
       $btnSubmit: btnRef,
       showSuccessMessage: false,
       successAction: () => {
-        console.log('open');
         successPopup.open();
         onSuccess && onSuccess();
       },
@@ -26,7 +25,7 @@ export const contactFormFooter = (formRef, onSuccess) => {
           rule: yup
             .string()
             .required(i18next.t('required'))
-            .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
+            .min(12, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
           defaultMessage: i18next.t('phone'),
           valid: false,

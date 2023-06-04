@@ -120,9 +120,8 @@ export default class SexyInput {
       let cleave = new Cleave(input, {
         /* eslint-enable */
         numericOnly: true,
-        prefix: '+380',
-        blocks: [4, 2, 3, 2, 2],
-        delimiters: [' ', ' ', ' ', ''],
+        prefix: '+',
+        blocks: [13],
       });
       // input.addEventListener('countrychange', () => {
       //   const currentCountry = input.intTelIput.getSelectedCountryData();

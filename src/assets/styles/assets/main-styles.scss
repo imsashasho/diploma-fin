@@ -1,5 +1,5 @@
 .container {
-  padding: 0 70px;
+  padding: 0 20px;
   margin: 0 auto;
 
   @include tablet {
@@ -231,66 +231,8 @@ a {
   }
 }
 
-.main-card-wrap {
-  padding: 10px;
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-}
-
-.slider-btn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  padding: 0;
-  border: 1px solid $mc1;
-  background: transparent;
-  -webkit-appearance: none;
-
-  @include tabletLarge {
-    width: 52px;
-    height: 52px;
-  }
-
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: $mc1;
-    stroke: $mc1;
-  }
-
-}
-
-.slider-btn-light {
-
-  color: $mc2;
-  background: transparent;
-  border: 1px solid $mc2;
-    svg {
-      fill: $mc2;
-      stroke: $mc2;
-    }
-
-}
-
-
-
-.slider-btn--next {
-  svg {
-    transform: rotate(180deg);
-  }
-}
-
-.slider-btn--prev {
-  margin-right: 8px;
-}
-
-.swiper-button-prev:after {
-  display: none;
+.wrap-main {
+  padding: 0 8px; 
 }
 
 
@@ -329,7 +271,7 @@ a:focus-visible {
 
 .text {
 
-  &-header {
+  &-128 {
     font-family: $default-font;
     font-style: normal;
     font-weight: 500;
@@ -340,12 +282,12 @@ a:focus-visible {
     color: $mc1;
     transition: all ease-in-out 0.3s;
   }
-  &-title {
+  &-48 {
     font-family: $default-font;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 48px;
-    line-height: 120%;
+    line-height: 100%;
     text-transform: uppercase;
 
     @include tabletLarge {
@@ -357,23 +299,26 @@ a:focus-visible {
     }
   }
 
-  &-medium-uppercase {
+  &-24 {
     font-family: $default-font;
+    font-family: 'Josefin Sans';
     font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 120%;
-    letter-spacing: -0.05em;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
 
   }
 
-  &-descr{
+  &-16{
     font-family: $default-font;
     font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 16px;
     line-height: 140%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
 
   }
 
@@ -389,78 +334,4 @@ a:focus-visible {
       font-size: 16px;
     }
   }
-}
-
-.main-page-header-wrap {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-}
-
-.main-page-header-wrap--img {
-  padding: 160px 0 100px;
-
-  @include tabletLarge {
-    padding: 136px 0 40px;
-  }
-
-  @include tablet {
-    padding: 120px 0 40px;
-  }
-
-  @include mobile {
-    padding: 88px 0 30px;           
-  }
-}
-
-.main-page-header-wrap--black {
-  padding: 160px 0 50px;
-
-  @include tabletLarge {
-    padding: 136px 0 40px;
-  }
-
-  @include tablet {
-    padding: 120px 0px 40px;
-  }
-
-  @include mobile {
-    padding: 88px 0 30px;
-  }
-}
-
-.main-page-wrap {
-  padding: 0 70px 150px 70px;
-
-  @include tablet {
-    padding: 0 10px 100px 10px;
-  }
-
-  @include mobile {
-    padding: 0 10px 60px 10px;
-  }
-
-}
-.main-intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @include tablet {
-
-    .breadcrumbs {
-      margin-bottom: 10px;
-    }
-  }
-
-}
-.main-intro__title {
-  color: $mc2;
-  text-align: center;
 }

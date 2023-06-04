@@ -4,12 +4,10 @@ import axios from 'axios';
 import initView from './form-view';
 import { langDetect } from '../../../assets/scripts/modules/helpers/helpers';
 
-const sendForm = async data => ({ code_error: null });
-// {
-//   const response = await axios.post('/wp-admin/admin-ajax.php', data);
-//   console.log(response);
-//   return response.data;
-// };
+const sendForm = async data => {
+  const response = await axios.post('/wp-admin/admin-ajax.php', data);
+  return response.data;
+};
 
 /*  */
 const lang = langDetect();
@@ -44,34 +42,7 @@ const lang = langDetect();
       //     connectionFailed: 'Ошибка соединения с CRM',
       //   },
       // },
-      // uk: {
-      //   // Тексты конкретного языка
-      //   translation: {
-      //     // Так называемый namespace по умолчанию
-      //     name: 'Ім’я:*',
-      //     phone: 'Телефон:*',
-      //     send: 'Надіслати',
-      //     sending: 'Відправлення',
-      //     field_too_short: 'Телефон має містити принаймні {{cnt}} символів',
-      //     field_too_long: 'Телефон має містити не більше {{cnt}} символів',
-      //     only_number: 'Тут лише цифри',
-      //     required: 'Це поле є обов`язковим',
-      //     sendingSuccessTitle: 'Повідомлення надіслано',
-      //     sendingSuccessText: 'Чекайте відповіді наших менеджерів',
-      //     sendingErrorText: 'Чекайте відповіді наших менеджерів',
 
-      //     sendingErrorTitle: 'Сталася помилка',
-      //     send_fail:
-      //       'Повідомлення не було відправлено через невідому помилку сервера. Код: [send_fail] ',
-      //     invalid_form:
-      //       'Повідомлення не було відправлено через невідому помилку сервера. Код: [invalid_form] ',
-      //     front_error:
-      //       'Повідомлення не було відправлено через невідому помилку сервера. Код: [front_error] ',
-      //     invalid_upload_file: 'Помилка завантаження файлу. Код: [invalid_upload_file]',
-      //     invalid_recaptcha: 'Заповніть капчу і спробуйте ще раз знову. Код: [invalid_recaptcha]',
-      //     connectionFailed: "Помилка з'єднання с CRM",
-      //   },
-      // },
       en: {
         // Тексты конкретного языка
         translation: {
@@ -96,6 +67,34 @@ const lang = langDetect();
           invalid_recaptcha: 'Please fill in the captcha and try again. Code: [invalid_recaptcha] ',
           connectionFailed: 'Server connection error',
           // field_too_short: 'this field must consist at least {{cnt}} characters'
+        },
+      },
+      tr: {
+        // Тексты конкретного языка
+        translation: {
+          // Так называемый namespace по умолчанию
+          name: 'İsim:*',
+          phone: 'Telefon:*',
+          send: 'Göndermek',
+          sending: 'Gönderiliyor',
+          field_too_short: 'telefon en az {{cnt}} karakter olmalıdır',
+          field_too_long: 'telefon en fazla {{cnt}} karakter olmalıdır',
+          only_number: 'burada sadece rakamlar',
+          required: 'bu alan zorunludur',
+          sendingSuccessTitle: 'Mesaj gönderildi',
+          sendingSuccessText: 'Yöneticilerimizin yanıtlarını bekleyin',
+          sendingErrorText: 'Yöneticilerimizin yanıtlarını bekleyin',
+          sendingErrorTitle: 'Bir hata oluştu',
+          send_fail:
+            'Mesaj, bilinmeyen bir sunucu hatası nedeniyle gönderilemedi. Kod: [send_fail]',
+          invalid_form:
+            'Bilinmeyen bir sunucu hatası nedeniyle ileti gönderilmedi. Kod: [geçersiz_form]',
+          front_error:
+            'Bilinmeyen bir sunucu hatası nedeniyle mesaj gönderilmedi. Kod: [front_error]',
+          invalid_upload_file: 'Dosya yüklenirken hata oluştu. Kod: [geçersiz_upload_file]',
+          invalid_recaptcha:
+            'Lütfen captchayı doldurun ve tekrar deneyin. Kod: [geçersiz_recaptcha]',
+          connectionFailed: 'Sunucu bağlantı hatası',
         },
       },
     },
