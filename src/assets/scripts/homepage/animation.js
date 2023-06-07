@@ -1,148 +1,153 @@
-import { gsap, ScrollTrigger } from 'gsap/all';
+import { gsap, ScrollTrigger, MotionPathPlugin } from 'gsap/all';
+import path from 'path';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stage = document.querySelector('.page__content');
-const slides = document.querySelectorAll('.slide');
-const titles = document.querySelectorAll('.col__content-title');
+gsap.registerPlugin(MotionPathPlugin);
 
-function initIntro() {
-  // animate the intro elements into place
+document.addEventListener('DOMContentLoaded', (e) => {
+  console.clear();
 
-  let tl = gsap.timeline({ delay: 0.3 });
+  gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
-  tl.fromTo(
-    '.main-screen-intro-logo svg',
-    { x: 300, y: 0 },
-    {
-      y: 0,
-      x: 0,
-      ease: 'power4',
-      duration: 4,
-    },
-  ).fromTo(
-    '.main-screen-intro-descr',
-    {
-      x: 100,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 3,
-      ease: 'power4',
-    },
-    0.3,
-  );
+  const viewport = document.querySelector('#viewport');
+  const world = document.querySelector('#animation-container');
+  const bee = document.querySelector('#rect');
 
-  // set up scrollTrigger animation for the when the intro scrolls out
+  const worldWidth = world.offsetWidth;
+  const worldHeight = world.offsetHeight;
 
-  //   let stl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: '.main-screen',
-  //       scrub: 1,
-  //       start: 'top bottom', // position of trigger meets the scroller position
-  //       end: 'bottom top',
-  //     },
-  //   });
+  const setX = gsap.quickSetter(world, 'x', 'px');
+  const setY = gsap.quickSetter(world, 'y', 'px');
+  const setOrigin = gsap.quickSetter(world, 'transformOrigin');
+  const beeProps = gsap.getProperty(bee);
 
-  //   stl
-  //     .to('.main-screen-intro-logo svg', {
-  //       y: 50,
-  //       ease: 'power4.in',
-  //       duration: 1,
-  //     })
-  //     .to('.main-screen-intro-descr', {
-  //       y: 50,
-  //       ease: 'power4.in',
-  //       duration: 1,
-  //     });
-}
+  let vw; let vh; let clampX; let
+    clampY;
+  onResize();
 
-function initSlides() {
-  // Animation of each slide scrolling into view
-
-  slides.forEach(slide => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: slide,
-        start: '40% 50%', // position of trigger meets the scroller position
-      },
-    });
-
-    tl.from(slide.querySelectorAll('.col__content-title'), {
-      ease: 'power4',
-      y: 100,
-      duration: 2.5,
-    }).from(
-      slide.querySelectorAll('.col__content-txt'),
-      {
-        x: 100,
-        y: 0,
-        opacity: 0,
-        duration: 2,
-        ease: 'power4',
-      },
-      0.4,
-    );
+  gsap.set('#svg', {
+    width: 1920,
+    height: 9464,
   });
-}
 
-function initParallax() {
-  slides.forEach(slide => {
-    let images = slide.querySelectorAll('[img-paralax]');
-
-    images.forEach(image => {
-      const wrap = document.createElement('div');
-      wrap.style.overflow = 'hidden';
-      wrap.style.height = '100%';
-      image.parentElement.prepend(wrap);
-      //   gsap.set(image, { willChange: 'transform', scale: 1.1 });
-      wrap.prepend(image);
-
-      gsap.fromTo(
-        image,
-        {
-          y: '-20px',
-          scale: 1.3,
-        },
-        {
-          y: '5vh',
-          scrollTrigger: {
-            trigger: slide,
-            scrub: true,
-            start: 'top bottom', // position of trigger meets the scroller position
-          },
-          ease: 'sine',
-        },
-      );
-    });
+  gsap.set(bee, {
+    display: 'block',
+    transformOrigin: '50% 0%',
+    x: path[0],
+    y: path[1],
   });
-}
 
-// function scrollTop() {
-//     gsap.to(window, {
-//         duration: 2,
-//         scrollTo: {
-//             y: "#slide-0"
+  const beeTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#viewport',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        gsap.to('#rect', { rotation: () => (self.direction === 1 ? 0 : 90), overwrite: 'auto' });
+      },
+    },
+  });
+
+  beeTimeline.to(bee, {
+    duration: 100000, // Adjust the duration as needed
+    motionPath: {
+      path: '#rect125',
+      type: 'cubic',
+      alignOrigin: [0.5, 0.5],
+      autoRotate: 270,
+    },
+    ease: 'none',
+  });
+
+  gsap.ticker.add(update);
+
+  function update() {
+    const { x } = bee._gsap;
+    const { y } = bee._gsap;
+
+    setX(-clampX(x - vw / 2));
+    setY(-clampY(y - vh / 2));
+    ScrollTrigger.refresh();
+  }
+
+  window.addEventListener('resize', onResize);
+
+  function onResize() {
+    vw = window.innerWidth;
+    vh = window.innerHeight;
+    clampX = gsap.utils.clamp(0, worldWidth - vw);
+    clampY = gsap.utils.clamp(0, worldHeight - vh);
+  }
+});
+
+// var animation;
+
+// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+
+// gsap.set('#rect125', { scale: 1, autoAlpha: 1 });
+// gsap.set('#rect', { transformOrigin: '50% 50%' });
+
+// animation = gsap.to('#rect', {
+//   scrollTrigger: {
+//     trigger: '#rect125',
+//     start: 'top 20%',
+//     end: '+=9464px',
+//     scrub: 1,
+//     markers: true,
+//     onUpdate: self => {
+//       gsap.to('#rect', { rotation: () => (self.direction === 1 ? 0 : -180), overwrite: 'auto' });
+//     },
+//   },
+//   duration: 1,
+//   ease: 'none',
+//   immediateRender: true,
+//   motionPath: {
+//     path: '#rect125',
+//     align: '#rect125',
+//     alignOrigin: [0.5, 0.5],
+//     autoRotate: 90,
+//   },
+// });
+
+// function initParallax() {
+//   slides.forEach(slide => {
+//     let images = slide.querySelectorAll('[img-paralax]');
+
+//     images.forEach(image => {
+//       const wrap = document.createElement('div');
+//       wrap.style.overflow = 'hidden';
+//       wrap.style.height = '100%';
+//       image.parentElement.prepend(wrap);
+//       //   gsap.set(image, { willChange: 'transform', scale: 1.1 });
+//       wrap.prepend(image);
+
+//       gsap.fromTo(
+//         image,
+//         {
+//           y: '-20px',
+//           scale: 1.3,
 //         },
-//         ease: "power2.inOut"
+//         {
+//           y: '5vh',
+//           scrollTrigger: {
+//             trigger: slide,
+//             scrub: true,
+//             start: 'top bottom', // position of trigger meets the scroller position
+//           },
+//           ease: 'sine',
+//         },
+//       );
 //     });
-//     gsap.to('.footer__link-top-line', {
-//         scaleY: 1,
-//         transformOrigin: "bottom center",
-//         duration: 0.6,
-//         ease: "power4"
-//     });
+//   });
 // }
 
-function init() {
-  gsap.set(stage, { autoAlpha: 1 });
-  initIntro();
-  initSlides();
-  initParallax();
-}
+// function init() {
+//   initParallax();
+// }
 
-window.onload = () => {
-  init();
-};
+// window.onload = () => {
+//   init();
+// };

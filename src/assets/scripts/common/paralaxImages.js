@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const initParalax = () => {
   const paralaxImages = document.querySelectorAll('[img-paralax]');
-  paralaxImages.forEach(image => {
+  paralaxImages.forEach((image) => {
     const wrap = document.createElement('div');
     wrap.style.overflow = 'hidden';
     wrap.style.height = '100%';

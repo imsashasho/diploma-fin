@@ -1,10 +1,4 @@
-import FormMonster from '../../../pug/components/form/form';
-import SexyInput from '../../../pug/components/input/input';
-import * as yup from 'yup';
-import i18next from 'i18next';
 import { gsap, ScrollTrigger } from 'gsap/all';
-import { contactFormFooter } from './contactFormFooter';
-import { contactPopup } from './contactPopup';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,8 +27,6 @@ const initFooter = () => {
       top: 0,
     });
   }
-
-  contactFormFooter(document.querySelector('#call-form'));
 
   footerUpRef.addEventListener('click', scrollToTop);
 };

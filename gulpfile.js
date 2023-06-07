@@ -1,4 +1,4 @@
-const proxy = 'giza-main';
+const proxy = 'diploma-main';
 let webPackSetting = true;
 let typeScriptSetting = false;
 
@@ -77,6 +77,10 @@ const paths = {
   images: {
     src: './src/assets/images/**/*',
     dest: './dist/assets/images',
+  },
+  videos: {
+    src: './src/assets/videos/**/*',
+    dest: './dist/assets/videos',
   },
   svgSprite: {
     src: './src/assets/svg-sprite/*.svg',
@@ -376,6 +380,10 @@ const pathsProd = {
   images: {
     src: './dist/assets/images/**/*',
     dest: './prod/assets/images',
+  },
+  videos: {
+    src: './dist/assets/videos/**/*',
+    dest: './prod/assets/videos',
   },
 };
 // CLEAN PROD FOLDER

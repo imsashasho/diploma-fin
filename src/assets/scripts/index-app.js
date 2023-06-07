@@ -1,13 +1,7 @@
 import { gsap, ScrollTrigger, Flip } from 'gsap/all';
-import axios from 'axios';
-import SplitType from 'split-type';
-import imagesLoaded from 'imagesloaded';
 import './common/header';
-import './common/footer';
-import { preloader } from './common/loader';
 
 global.gsap = gsap;
-global.axios = axios;
 
 // window.addEventListener('load', () => {
 //   setTimeout(() => {

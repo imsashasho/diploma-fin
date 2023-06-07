@@ -1,0 +1,305 @@
+.book {
+    &-items-list {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+        &-wrap {
+            padding: 197px 192px 84px 192px;
+
+        }
+    }
+    &-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 86px;
+        padding: 151px 60px;
+        border: 1px dashed $wc;
+        margin-bottom: 192px;
+        height: 780px;
+        position: relative;
+        z-index: 1;
+
+        &.book-item--1 {
+
+            .book-item-deco-top {
+                position: absolute;
+                top: -82px;
+                right: -110px;
+                transform: translateY(-100%);
+
+                svg {
+                    width: 888px;
+                    height: 206px;
+                    fill: #FE0098;
+                }
+
+            }
+
+        }
+
+        &.book-item--even {
+
+            .book-item-deco-top {     
+                right: -74px;
+            }
+
+            .book-item-deco-rs {     
+                top: -110px;
+            }
+
+        }
+
+        &.book-item--8 {
+
+            .book-item-deco-top {     
+                right: -74px;
+            }
+
+            .book-item-deco-rs {     
+                top: -75px;
+            }
+
+        }
+
+        &.book-item--9 {
+
+            .book-item-deco-top {     
+                right: -74px;
+                top: -83px;
+            }
+
+            .book-item-deco-ls {     
+                top: -74px;
+            }
+
+        }
+
+        &-deco-top {
+            position: absolute;
+            top: -84px;
+            right: -110px;
+            transform: translateY(-100%);
+
+            svg {
+                width: 1716px;
+                height: 24px;
+            }
+        }
+
+        &-deco-rs {
+            position: absolute;
+            right: -86px;
+            top: -76px;
+            transform: translateX(100%);
+
+            svg {
+                height: 960px;
+                width: 24px;
+
+            }
+            
+        }
+
+        &-deco-ls {
+            position: absolute;
+            left: -84px;
+            top: -110px;
+            transform: translateX(-100%);
+            svg {
+                height: 960px;
+                width: 24px;
+
+            }
+        }
+
+        &-deco-end {
+            position: absolute;
+            left: -73px;
+            bottom: -84px;
+            transform: translateY(100%);
+            svg {
+                height: 132px;
+                width: 852px;
+
+            }
+        }
+
+        &-deco-top-7 {
+            position: absolute;
+            left: -73px;
+            top: -353px;
+            transform: translateY(100%);
+            svg {
+                height: 132px;
+                width: 852px;
+
+            }
+
+        }
+
+        &-deco-bottom-7 {
+            position: absolute;          
+            right: -110px;
+            bottom: -85px;
+            transform: translateY(100%);
+            svg {
+                height: 96px;
+                width: 888px;
+
+            }
+
+        }
+
+
+
+        &--reverse {
+            flex-direction: row-reverse;
+
+        }
+
+        &--center {
+            border: 1px dashed transparent;
+            margin: 300px 0 264px 0;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+            height: 1002px;
+        }
+        &--6 {
+            margin-bottom: 0;
+        }
+        &-text-wrap {
+            display: flex;
+            flex-direction: column;
+            
+
+        }
+        &-text__title {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 32px;
+            color: #FBFF08;
+            margin-bottom: 20px;
+
+        }
+        &-text__descr {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+
+        }
+        &-text__btn {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background-image: url('../../assets/images/btn-bg.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 70px;
+            padding: 0 42px;
+            border: none;
+            width: 462px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        &-video-wrap  {
+            height: 478px;
+
+        }
+        &-video {
+            height: inherit;
+
+        }
+
+        &-swiper-wrap {
+            width: 100%;
+        }
+
+        &-swiper{
+            overflow: hidden;
+        }
+
+        &-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-slide__video-wrap {
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+
+        }
+        &-slide__video {
+            height: inherit;
+            width: 100%;
+        }
+
+        &-slide__video-descr {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            text-align: center;
+            color: #FFFFFF;
+            width: 80%;
+        }
+
+        &-swiper-nav {
+            position: absolute;
+            width: 120%;
+            display: flex;
+            justify-content: space-between;
+            top: 50%;
+            transform: translateY(50%);
+        }
+
+        &-button-prev {
+            height: 96px;
+            width: 96px;
+
+            svg {
+                height: 100%;
+                width: 100%;
+                transform: rotate(180deg);
+            }
+
+        }
+
+        &-button-next {
+            height: 96px;
+            width: 96px;
+
+            svg {
+                height: 100%;
+                width: 100%;
+                
+            }
+
+        }
+        
+
+    }
+    
+
+}

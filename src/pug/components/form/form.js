@@ -4,7 +4,7 @@ import axios from 'axios';
 import initView from './form-view';
 import { langDetect } from '../../../assets/scripts/modules/helpers/helpers';
 
-const sendForm = async data => {
+const sendForm = async (data) => {
   const response = await axios.post('/wp-admin/admin-ajax.php', data);
   return response.data;
 };
@@ -143,7 +143,7 @@ export default class FormMonster {
   }
 
   changeInput() {
-    return e => {
+    return (e) => {
       /*  */
       e.preventDefault();
       this.watchedState.status = 'filling';
@@ -152,7 +152,7 @@ export default class FormMonster {
       /*  */
       const error = this.validate(formData);
       /*  */
-      this.fieldsKey.map(key => {
+      this.fieldsKey.map((key) => {
         const field = this.elements.fields[key];
         field.valid = true;
         field.error = [];
@@ -177,7 +177,7 @@ export default class FormMonster {
   }
 
   submitForm() {
-    return async e => {
+    return async (e) => {
       /*  */
       e.preventDefault();
       this.changeInput()(e);
@@ -211,7 +211,7 @@ export default class FormMonster {
 
   listers() {
     this.elements.$form.addEventListener('submit', this.submitForm(this.watchedState));
-    this.fieldsKey.map(key => {
+    this.fieldsKey.map((key) => {
       const { input } = this.elements.fields[key].inputWrapper;
       input.addEventListener('input', this.changeInput(this.watchedState));
       return null;
