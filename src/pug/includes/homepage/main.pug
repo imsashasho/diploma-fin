@@ -1,76 +1,48 @@
 section.book-items-list-wrap  
     .book-items-list
-        .book-item.book-item--1#book-item--1
-            .book-item-deco-top 
-                +svg('top-line--1')
-            .book-item-deco-rs 
-                +svg('side-line')
+        .book-item.book-item--1
             .book-item-text-wrap 
-                h2.book-item-text__title Фізичний рівень
-                p.book-item-text__descr Фізичний рівень займає особливе місце в будь-якій мережевій архітектурі, оскільки саме на цьому рівні відбувається реальний перенос інформації від комп'ютера до комп'ютера.
-                a(href="#book-item--2").book-item-text__btn до наступного розділу
+                h2.book-item-text__title інтерактивний підручник розроблено:
+                p.book-item-text__descr БУЦИК АНАСТАСІЄЮ
+                a(href="#book-item--2").book-item-text__btn до підручника
             .book-item-video-wrap 
-                video(controls src="./assets/images/physical-level.mp4").book-item-video 
+                img(src="./assets/images/cat-end.jpeg", alt="").book-item-img
         .book-item.book-item--reverse.book-item--2#book-item--2
-            .book-item-deco-top 
-                +svg('horisontal-line')
-            .book-item-deco-ls 
-                +svg('side-line')
             .book-item-text-wrap 
-                h2.book-item-text__title Фізичний рівень
-                p.book-item-text__descr Фізичний рівень займає особливе місце в будь-якій мережевій архітектурі, оскільки саме на цьому рівні відбувається реальний перенос інформації від комп'ютера до комп'ютера.
+                h2.book-item-text__title Знайомство з комп’ютерними мережами
+                p.book-item-text__descr Комп`ютерна мережа, це два або більше комп`ютера, які обмінюються інформацією по лініям зв`язку. 
                 a(href="#book-item--3").book-item-text__btn до наступного розділу
             .book-item-video-wrap 
+                video(controls src="./assets/images/znayomstvo.mp4").book-item-video 
+        .book-item.book-item--3#book-item--3
+            .book-item-text-wrap 
+                h2.book-item-text__title Фізичний рівень
+                p.book-item-text__descr Фізичний рівень займає особливе місце в будь-якій мережевій архітектурі, оскільки саме на цьому рівні відбувається реальний перенос інформації від комп'ютера до комп'ютера.
+                a(href="#book-item--4").book-item-text__btn до наступного розділу
+            .book-item-video-wrap 
                 video(controls src="./assets/images/physical-level.mp4").book-item-video
-        .book-item.book-item--3.book-item--even#book-item--3
-            .book-item-deco-top 
-                +svg('horisontal-line')
-            .book-item-deco-rs 
-                +svg('side-line')
+        .book-item.book-item--reverse.book-item--4.book-item--even#book-item--4
             .book-item-text-wrap 
                 h2.book-item-text__title Канальний рівень
                 p.book-item-text__descr Канальний рівень розглядає передачу даних від комп'ютера до комп'ютера у вигляді кадрів даних
-                a(href="#book-item--4").book-item-text__btn до наступного розділу
+                a(href="#book-item--5").book-item-text__btn до наступного розділу
             .book-item-video-wrap 
                 video(controls src="./assets/images/kanalniy.mp4").book-item-video 
-        .book-item.book-item--reverse.book-item--4#book-item--4
-            .book-item-deco-top 
-                +svg('horisontal-line')
-            .book-item-deco-ls 
-                +svg('side-line')
+        .book-item.book-item--5#book-item--5
             .book-item-text-wrap 
                 h2.book-item-text__title Мережевий рівень
                 p.book-item-text__descr Основними задачами мережевого рівня є: глобальна адресація, визначення шляхів доставки пакетів (маршрутизація) та розбиття інформаційних пакетів на фрагменти, які можуть бути доставлені через канальний рівень. 
-                a(href="#book-item--5").book-item-text__btn до наступного розділу
+                a(href="#book-item--6").book-item-text__btn до наступного розділу
             .book-item-video-wrap 
                 video(controls src="./assets/images/merejeviy.mp4").book-item-video  
-        .book-item.book-item--5.book-item--even#book-item--5
-            .book-item-deco-top 
-                +svg('horisontal-line')
-            .book-item-deco-rs 
-                +svg('side-line')
+        .book-item.book-item--reverse.book-item--6.book-item--even#book-item--6
             .book-item-text-wrap 
                 h2.book-item-text__title Транспортний рівень
                 p.book-item-text__descr Завдання транспортного рівня не тільки у тому, щоб доставити дані на потрібний комп'ютер, а й передати їх конкретному програмному додатку. 
-                a(href="#book-item--6").book-item-text__btn до наступного розділу
-            .book-item-video-wrap 
-                video(controls src="./assets/images/transportniy.mp4").book-item-video
-        .book-item.book-item--reverse.book-item--6#book-item--6
-            .book-item-deco-top 
-                +svg('horisontal-line')
-            .book-item-deco-ls 
-                +svg('side-line')
-            .book-item-text-wrap 
-                h2.book-item-text__title Прикладний рівень
-                p.book-item-text__descr Прикладний рівень – це програми, розроблені для кінцевого користувача. А також програмні інтерфейси між програмами та користувачем.
                 a(href="#book-item--7").book-item-text__btn до наступного розділу
             .book-item-video-wrap 
-                video(controls src="./assets/images/main-video.mp4").book-item-video 
+                video(controls src="./assets/images/transportniy.mp4").book-item-video
         .book-item.book-item--center.book-item--7#book-item--7
-            .book-item-deco-top-7 
-                +svg('top-line-7')
-            .book-item-deco-bottom-7 
-                +svg('bottom-line-7')
             h2.book-item-text__title Сеансовий рівень та рівень представлень
             .book-item-swiper-wrap
                 .book-item-swiper.swiper 
@@ -100,26 +72,18 @@ section.book-items-list-wrap
                     +svg('arrow-swiper')
                 .book-item-button-next
                     +svg('arrow-swiper')  
-        .book-item.book-item--reverse.book-item--8#book-item--8
-            .book-item-deco-rs 
-                +svg('side-line')
+        .book-item.book-item--8#book-item--8
             .book-item-text-wrap 
-                h2.book-item-text__title Канальний рівень
-                p.book-item-text__descr Канальний рівень розглядає передачу даних від комп'ютера до комп'ютера у вигляді кадрів даних
+                h2.book-item-text__title Прикладний рівень
+                p.book-item-text__descr Прикладний рівень – це програми, розроблені для кінцевого користувача. А також програмні інтерфейси між програмами та користувачем.
                 a(href="#book-item--9").book-item-text__btn до наступного розділу
             .book-item-video-wrap 
-                video(controls src="./assets/images/main-video.mp4").book-item-video
-        .book-item.book-item--reverse.book-item--9
-            .book-item-deco-top 
-                +svg('horisontal-line')
-            .book-item-deco-ls 
-                +svg('side-line')
-            .book-item-deco-end 
-                +svg('end-line')
+                video(controls src="./assets/images/prykladnyi.mp4").book-item-video 
+        .book-item.book-item--reverse.book-item--9#book-item--9
             .book-item-text-wrap 
-                h2.book-item-text__title Канальний рівень
-                p.book-item-text__descr Канальний рівень розглядає передачу даних від комп'ютера до комп'ютера у вигляді кадрів даних
-                a(href="#book-item--1").book-item-text__btn на початок
+                h2.book-item-text__title Переміщення по мережі
+                p.book-item-text__descr Набір протоколів нижньоприкладного рівня утворює, так званий Stack протоколів. Мережеві протоколи переміщують дані по мережі. 
+                a(href="#book-item--2").book-item-text__btn до початку
             .book-item-video-wrap 
-                video(controls src="./assets/images/main-video.mp4").book-item-video 
-
+                video(controls src="./assets/images/peremischennya.mp4").book-item-video
+        

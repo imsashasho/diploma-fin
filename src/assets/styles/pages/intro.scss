@@ -6,6 +6,15 @@
 		top: 987px;
 		z-index: 1;
 	}
+
+	&-line-img-bg {
+		position: absolute;
+		width: 1750px;
+		left: 50%;
+		transform: translateX(-50%);
+
+	}
+
 	&-main-screen {
 		// background-image: url('../../assets/images/main-bg.png');
 		background-position: center;
@@ -160,20 +169,17 @@
   #rect {
 	width: 160px;
 	will-change: transform;
-	display: none;
   }
   
   #svg {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 1000px;
-	height: 1000px;  
 	pointer-events: none;
   }
   
   #rect125 {
 	fill: none;
 	stroke-width: 0.4;
-	stroke: rgba(255,255,255,0.5);
+	stroke: none;
   }
